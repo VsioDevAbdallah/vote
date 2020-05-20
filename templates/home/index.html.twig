@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs -->
+	<meta charset="utf-8">
+	<title>Ask me – Responsive Questions and Answers Template</title>
+	<meta name="description" content="Ask me Responsive Questions and Answers Template">
+	<meta name="author" content="2code.info">
+	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Main Style -->
+	<link rel="stylesheet" href="{{ asset('front/style.css') }}">
+
+  
+
+	<!-- Skins -->
+	<link rel="stylesheet" href="{{ asset('front/css/skins/skins.css') }}">
+	
+	<!-- Responsive Style -->
+	<link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
+	
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="{{ asset('front/images/favicon.png') }}">
+  
+</head>
+<body>
+
+<div class="loader"><div class="loader_html"></div></div>
+
+	
+	<div class="section-warp ask-me">
+		<div class="container clearfix">
+			<div class="box_icon box_warp box_no_border box_no_background" box_border="transparent" box_background="transparent" box_color="#FFF">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Bienvenue sur la plateforme de vote de l'assemblé générale</h2>
+						<p>Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae velit in neque dictum blandit.</p>
+						<div class="clearfix"></div>
+					</div>
+				</div><!-- End row -->
+			</div><!-- End box_icon -->
+		</div><!-- End container -->
+	</div><!-- End section-warp -->
+	
+	<section class="container main-content">
+		<div class="login">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="page-content">
+						<h2>Login</h2>
+
+                        {% if app.user %}
+                            <p class="mb-3">
+                                {% trans %}Vous êtes connecté en tant que{% endtrans %} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
+                            </p>
+
+                        {% endif %}
+                        
+                        {% if error %}
+                            <p class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+                        {% endif %}
+						<div class="form-style form-style-3">
+							<form method="post">
+								<div class="form-inputs clearfix">
+									<p class="login-text">
+										<input id="email" value="{{ last_username }}" name="email" type="email" onfocus="if (this.value == 'Username') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Username';}">
+										<i class="icon-user"></i>
+									</p>
+									<p class="login-password">
+										<input id="password" name="password" type="password" onfocus="if (this.value == 'Password') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Password';}">
+										<i class="icon-lock"></i>
+										<a href="#">Récuperer mon mot de passe</a>
+									</p>
+								</div>
+								<p class="form-submit login-submit">
+									<input type="submit" value="Se connecter" class="button color small login-submit submit">
+								</p>
+								<div class="rememberme">
+									<label><input type="checkbox" checked="checked"> Remember Me</label>
+								</div>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+							</form>
+						</div>
+					</div><!-- End page-content -->
+				</div><!-- End col-md-6 -->
+				<div class="col-md-6">
+					<div class="page-content">
+						<h2>Récuperation de mot de passe</h2>
+						<p>Salut. Êtes-vous un participant de l'assemblée générale. Pour recuperer votre mot de passe merci de cliquer sur <b>Recuperer mon mot de passe</b> à gauche dans le champs mot de passe. Saisissez votre adresse email pour la reception du mot de passe</p>
+						
+					</div><!-- End page-content -->
+				</div><!-- End col-md-6 -->
+			</div><!-- End row -->
+		</div><!-- End login -->
+	</section><!-- End container -->	
+	<footer id="footer">
+		<section class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="widget widget_contact">
+						<h3 class="widget_title">Where We Are ?</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu.</p>
+						<ul>
+							<li>
+								<span>Address :</span>
+								Ask Me Network, 33 Street, syada Zeinab, Cairo, Egypt.
+							</li>
+							<li>
+								<span>Support :</span>Support Telephone No : (+2)01111011110
+							</li>
+							<li>Support Email Account : info@example.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="widget">
+						<h3 class="widget_title">Quick Links</h3>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="ask_question.html">Ask Question</a></li>
+							<li><a href="index_2.html#">About</a></li>
+							<li><a href="cat_question.html">Questions</a></li>
+							<li><a href="user_profile.html">Users</a></li>
+							<li><a href="blog_1.html">Blog</a></li>
+							<li><a href="right_sidebar.html">Pages</a></li>
+							<li><a href="shortcodes.html">Shortcodes</a></li>
+							<li><a href="contact_us.html">Contact Us</a></li>
+							<li><a href="index_2.html#">FAQs</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="widget">
+						<h3 class="widget_title">Popular Questions</h3>
+						<ul class="related-posts">
+							<li class="related-item">
+								<h3><a href="index_2.html#">This is my first Question</a></h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam.</p>
+								<div class="clear"></div><span>Feb 22, 2014</span>
+							</li>
+							<li class="related-item">
+								<h3><a href="index_2.html#">This Is My Second Poll Question</a></h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam.</p>
+								<div class="clear"></div><span>Feb 22, 2014</span>
+							</li>
+						</ul>
+					</div>	
+				</div>
+				<div class="col-md-3">
+					<div class="widget widget_twitter">
+						<h3 class="widget_title">Latest Tweets</h3>
+						<div class="tweet_1"></div>
+					</div>
+				</div>
+			</div><!-- End row -->
+		</section><!-- End container -->
+	</footer><!-- End footer -->
+	<footer id="footer-bottom">
+		<section class="container">
+			<div class="copyrights f_left">Copyright 2014 Ask me | <a href="index_2.html#">By 2code</a></div>
+			<div class="social_icons f_right">
+				<ul>
+					<li class="twitter"><a original-title="Twitter" class="tooltip-n" href="index_2.html#"><i class="social_icon-twitter font17"></i></a></li>
+					<li class="facebook"><a original-title="Facebook" class="tooltip-n" href="index_2.html#"><i class="social_icon-facebook font17"></i></a></li>
+					<li class="gplus"><a original-title="Google plus" class="tooltip-n" href="index_2.html#"><i class="social_icon-gplus font17"></i></a></li>
+					<li class="youtube"><a original-title="Youtube" class="tooltip-n" href="index_2.html#"><i class="social_icon-youtube font17"></i></a></li>
+					<li class="skype"><a original-title="Skype" class="tooltip-n" href="skype:#?call"><i class="social_icon-skype font17"></i></a></li>
+					<li class="flickr"><a original-title="Flickr" class="tooltip-n" href="index_2.html#"><i class="social_icon-flickr font17"></i></a></li>
+					<li class="rss"><a original-title="Rss" class="tooltip-n" href="index_2.html#"><i class="social_icon-rss font17"></i></a></li>
+				</ul>
+			</div><!-- End social_icons -->
+		</section><!-- End container -->
+	</footer><!-- End footer-bottom -->
+</div><!-- End wrap -->
+
+<div class="go-up"><i class="icon-chevron-up"></i></div>
+
+<!-- js -->
+<script src="{{ asset('front/js/jquery.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery-ui-1.10.3.custom.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.easing.1.3.min.js') }}"></script>
+<script src="{{ asset('front/js/html5.js') }}"></script>
+<script src="{{ asset('front/js/twitter/jquery.tweet.js') }}"></script>
+<script src="{{ asset('front/js/jflickrfeed.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.tipsy.js') }}"></script>
+<script src="{{ asset('front/js/tabs.js') }}"></script>
+<script src="{{ asset('front/js/jquery.flexslider.js') }}"></script>
+<script src="{{ asset('front/js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('front/js/jquery.carouFredSel-6.2.1-packed.js') }}"></script>
+<script src="{{ asset('front/js/jquery.scrollTo.js') }}"></script>
+<script src="{{ asset('front/js/jquery.nav.js') }}"></script>
+<script src="{{ asset('front/js/tags.js') }}"></script>
+<script src="{{ asset('front/js/jquery.bxslider.min.js') }}"></script>
+<script src="{{ asset('front/js/custom.js') }}"></script>
+<!-- End js -->
+
+</body>
+</html>
